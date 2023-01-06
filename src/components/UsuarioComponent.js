@@ -6,7 +6,6 @@ import "./elementos.css";
 
 const initialUsuarios = [
     {
-        key: '0',
         nombre: 'comer manzana'  //
     }
 ]
@@ -21,9 +20,10 @@ const UsuarioComponent = () => {
 
 
     const tarjetaDelete = (usuarioKey) => {
-        const changeUsuarios = usuarios.filter(u => u.key !== usuarioKey)
+        const changeUsuarios = usuarios.filter(u => u.nombre !== usuarioKey)
         setUsuarios(changeUsuarios)
     }
+
     const usuarioAdd = (usuario) => {  //agregar tarea {en este caso est{a agregando un usuario}
         const addUsuarios = [
             ...usuarios,
@@ -33,7 +33,7 @@ const UsuarioComponent = () => {
     }
 
     const usuarioEdit = (usuarioEditado) => {
-        const changeUsuarios = usuarios.map(usuario => (usuario.key === usuarioEditado.key ? usuarioEditado : usuario))
+        const changeUsuarios = usuarios.map(usuario => (usuario.nombre === usuarioEditado.nombre ? usuarioEditado : usuario))
         setUsuarios(changeUsuarios)
     }
 
@@ -55,7 +55,7 @@ const UsuarioComponent = () => {
                     {
                         usuarios.map(u =>
                             <ListaComponent
-                                key={u.key}
+                            nombre={u.nombre}
                                 usuario={u}
                                 tarjetaDelete={tarjetaDelete}
                                 setUsuarioEditado={setUsuarioEditado} />)

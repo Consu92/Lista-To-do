@@ -10,15 +10,15 @@ const initialValues = [
 
 
 const TareaIngresadaComponent = ({ usuarioAdd, usuarioEditado, usuarioEdit, setUsuarioEditado }) => {
-  const [values, setValues] = useState(initialValues);
-  const { nombre } = values;
+  const [usuario, setUsuario] = useState(initialValues);
+  const { nombre } = usuario;
 
   useEffect(
     () => {
       if (usuarioEditado !== null) {
-        setValues(usuarioEditado)
+        setUsuario(usuarioEditado)
       } else {
-        setValues({
+        setUsuario({
 
           nombre: ''
         })
@@ -31,19 +31,19 @@ const TareaIngresadaComponent = ({ usuarioAdd, usuarioEditado, usuarioEdit, setU
   const handleInputChange = (e) => {
 
     const changedFormValue = {
-      ...values,
+      ...usuario,
       [e.target.name]: e.target.value
       //key:key
     }
-    setValues(changedFormValue)
+    setUsuario(changedFormValue);
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (usuarioEditado !== null) {
-      usuarioEdit(values)
+      usuarioEdit(usuario)
     } else {
-      usuarioAdd(values)
+      usuarioAdd(usuario)
     }
 
   }
@@ -65,9 +65,21 @@ const TareaIngresadaComponent = ({ usuarioAdd, usuarioEditado, usuarioEdit, setU
         />
       </div>
       <div>
-        <button type="submit" className="boton-editar-agregar  me-2"><span className="span-editar-agregar"></span>{usuarioEditado ? 'Editar' : 'Agregar'}</button> {/*el boton cambia de crear a editar*/}
-        {usuarioEditado ?
-          (<button type="button" className="boton-cancelar " onClick={() => { setUsuarioEditado(null) }}><span className="span-cancelar"></span>Cancelar</button>) : ''}
+
+        <button
+          type="submit"
+          className="boton-editar-agregar  me-2">
+          <span className="span-editar-agregar"></span>{usuarioEditado ? 'Editar' : 'Agregar'}
+        </button> {/*el boton cambia de crear a editar*/}
+        
+        {usuarioEditado ? (
+          <button
+            type="button"
+            className="boton-cancelar "
+            onClick={() => setUsuarioEditado(null)}>
+            <span className="span-cancelar"></span>Cancelar
+          </button>
+          ) : ''}
 
       </div>
 
