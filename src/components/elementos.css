@@ -1,0 +1,117 @@
+.container{
+    background-color: #12343b;
+    border-radius: 10px;
+    margin-top: 60px;
+    max-width: fit-content;   
+}
+ 
+#contenedor{
+    width: 400px;
+}
+/*.container-dos{
+    width: 400px;
+}*/
+
+/*Modifica ancho de input tarea escrita editable o borrable*/
+.input-2{
+    width: 200px;
+
+}
+
+.titulo{
+    color: white;
+}
+
+.oracion-escrita{
+    font-size: small;
+    color: white;
+}
+
+.icono-editar{
+    margin-right: 15px;
+    color: white;
+}
+
+.icono-eliminar{
+    margin-right: 15px;
+    color: white;
+}
+
+/*Boton-editar-agregar, modifica ambos*/
+
+.boton-editar-agregar{
+    font-size: small;
+    border-radius:5px;
+    border-color: #572975;
+    background: #572975;
+    color: rgba(255, 255, 255, .4);
+    cursor: pointer;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.span-editar-agregar{
+
+    position: absolute;
+    width: -50%;
+    height: -50px;
+    border-radius: 50%;
+    background: rgba(38, 184, 221, .2);
+    left: -100%;
+    transition: .3s;
+}
+
+button:hover span{    left: -10%;
+}
+
+button:hover{
+    color: #c0e4da;
+    background: #340856;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .7);
+}
+
+/*Boton-cancelar*/
+
+.boton-cancelar{
+    font-size: small;
+    border-radius:5px;
+    border-color: #572975;
+    background: #572975;
+    color: rgba(255, 255, 255, .4);
+    cursor: pointer;
+    overflow: hidden;
+    transition: .3s;
+
+}
+
+.span-cencelar{
+
+    position: absolute;
+    width: -50%;
+    height: -50px;
+    border-radius: 50%;
+    background: rgba(38, 184, 221, .2);
+    left: -100%;
+    transition: .3s;
+}
+
+button:hover span{
+    left: -10%;
+}
+
+button:hover{
+    color: #c0e4da;
+    background: #340856;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .7);
+}
+
+/*TareaIngresadaComponent*/
+/*.tarea{width} Para mediar el ancho de la franja "Escribit tarea..."*/
+.tarea{
+    width: 200px;    
+    padding: 15px;
+    margin-right: 25px;
+
+}
+
+
